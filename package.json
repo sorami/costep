@@ -14,6 +14,7 @@
     "astro": "^2.4.1"
   },
   "devDependencies": {
+    "@unocss/transformer-directives": "^0.51.12",
     "unocss": "^0.51.12"
   }
 }
