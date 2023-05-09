@@ -1,5 +1,8 @@
 module.exports = {
-  plugins: [require.resolve("prettier-plugin-astro")],
+  plugins: [
+    require.resolve("prettier-plugin-astro"),
+    require.resolve("prettier-plugin-md-nocjsp"),
+  ],
   overrides: [
     {
       files: "*.astro",
@@ -7,5 +10,6 @@ module.exports = {
         parser: "astro",
       },
     },
+    { files: "*.md", options: { parser: "markdown-nocjsp" } },
   ],
 };

@@ -16,6 +16,8 @@
   "devDependencies": {
     "@unocss/reset": "^0.51.12",
     "@unocss/transformer-directives": "^0.51.12",
+    "prettier": "^2.8.8",
+    "prettier-plugin-md-nocjsp": "^1.5.1",
     "unocss": "^0.51.12"
   }
 }
