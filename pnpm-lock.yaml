@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@unocss/reset': ^0.51.12
   '@unocss/transformer-directives': ^0.51.12
   astro: ^2.4.1
   unocss: ^0.51.12
@@ -9,6 +10,7 @@ dependencies:
   astro: 2.4.3
 
 devDependencies:
+  '@unocss/reset': 0.51.12
   '@unocss/transformer-directives': 0.51.12
   unocss: 0.51.12
 
