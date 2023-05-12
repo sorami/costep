@@ -48,11 +48,12 @@ blockquote {
   @apply block;
   @apply my-6;
   @apply border-l-4;
-  @apply border-neutral-300;
+  @apply border-neutral-400;
   @apply pl-4;
 }
 
 blockquote p {
+  @apply text-neutral-500;
   @apply italic;
 }
 
