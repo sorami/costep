@@ -30,6 +30,9 @@ const pageTitle = `${article.data.title} - 科学技術コミュ日記`;
       <div class="text-xs tracking-tighter opacity-90">
         <p class="my-0">{article.data.description}</p>
       </div>
+      <div>
+        <img src={article.data.image} alt={article.data.imageAlt} />
+      </div>
     </div>
     <div>
       <Content />
