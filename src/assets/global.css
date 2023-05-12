@@ -8,13 +8,13 @@ html {
 }
 
 h2 {
-  @apply text-lg;
+  @apply text-2xl;
   @apply font-semibold;
   @apply mt-12 mb-3;
 }
 
 h3 {
-  @apply text-base;
+  @apply text-lg;
   @apply font-semibold;
   @apply mt-9 mb-3;
 }
