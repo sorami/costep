@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const allArticles = await getCollection("articles");
+  return allArticles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await article.render();
+
+const pageTitle = `${article.data.title} - 科学技術コミュ日記`;
+---
+
+<BaseLayout title={pageTitle}>
+  <main class="max-w-lg m-auto">
+    <div class="flex flex-col gap-y-2 mb-10">
+      <div>
+        <h1 class="text-lg font-bold">{article.data.title}</h1>
+      </div>
+      <div>
+        <time datetime={article.data.pubDate.toISOString()}>
+          {article.data.pubDate.toISOString().slice(0, 10)}
+        </time>
+      </div>
+      <div class="text-xs tracking-tighter opacity-90">
+        <p>{article.data.description}</p>
+      </div>
+    </div>
+    <div>
+      <Content />
+    </div>
+  </main>
+</BaseLayout>
