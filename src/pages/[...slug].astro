@@ -18,7 +18,7 @@ const pageTitle = `${article.data.title} - 科学技術コミュ日記`;
 
 <BaseLayout title={pageTitle}>
   <main class="max-w-2xl m-auto">
-    <div class="flex flex-col gap-y-2 mb-12">
+    <div class="flex flex-col gap-y-2 mb-12 items-center">
       <div class="tracking-tighter">
         <time datetime={article.data.pubDate.toISOString()}>
           {article.data.pubDate.toISOString().slice(0, 10)}
