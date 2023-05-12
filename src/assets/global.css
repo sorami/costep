@@ -23,3 +23,10 @@ ul {
   @apply list-disc;
   @apply ml-5;
 }
+
+blockquote {
+  @apply border-l-4;
+  @apply border-neutral-300;
+  @apply pl-4;
+  @apply my-5;
+}
