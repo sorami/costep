@@ -8,11 +8,11 @@ const sortedArticles = allArticles.sort((a, b) => {
 ---
 
 <BaseLayout title="科学技術コミュ日記">
-  <main class="max-w-lg m-auto">
+  <main class="max-w-2xl m-auto">
     <div class="flex flex-col gap-y-3">
       {
         sortedArticles.map((article) => (
-          <a href={`/${article.slug}`}>
+          <a href={`/${article.slug}`} class="text-neutral-700 decoration-none">
             <div class="flex flex-col gap-y-1 rounded p-3 hover:bg-neutral-2/70">
               <div class="flex justify-between gap-x-6 items-start">
                 <div>{article.data.title}</div>

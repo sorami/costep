@@ -17,7 +17,7 @@ const pageTitle = `${article.data.title} - 科学技術コミュ日記`;
 ---
 
 <BaseLayout title={pageTitle}>
-  <main class="max-w-lg m-auto">
+  <main class="max-w-2xl m-auto">
     <div class="flex flex-col gap-y-2 mb-10">
       <div>
         <h1 class="text-lg font-bold">{article.data.title}</h1>
@@ -28,7 +28,7 @@ const pageTitle = `${article.data.title} - 科学技術コミュ日記`;
         </time>
       </div>
       <div class="text-xs tracking-tighter opacity-90">
-        <p>{article.data.description}</p>
+        <p class="my-0">{article.data.description}</p>
       </div>
     </div>
     <div>

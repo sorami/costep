@@ -1,0 +1,25 @@
+html {
+  @apply bg-white;
+  @apply text-neutral-700;
+}
+
+p {
+  @apply my-5;
+}
+
+a,
+a:visited {
+  @apply underline;
+}
+a:hover {
+  @apply decoration-none;
+}
+
+img {
+  @apply rounded;
+}
+
+ul {
+  @apply list-disc;
+  @apply ml-5;
+}
