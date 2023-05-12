@@ -57,6 +57,6 @@ blockquote p {
 }
 
 iframe {
-  @apply my-6;
+  @apply my-9;
   @apply mx-auto;
 }
