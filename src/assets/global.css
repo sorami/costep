@@ -10,13 +10,13 @@ html {
 h2 {
   @apply text-lg;
   @apply font-semibold;
-  @apply mt-9 mb-3;
+  @apply mt-12 mb-3;
 }
 
 h3 {
   @apply text-base;
   @apply font-semibold;
-  @apply mt-6 mb-3;
+  @apply mt-9 mb-3;
 }
 
 p + p {
@@ -50,4 +50,9 @@ blockquote {
 
 blockquote p {
   @apply italic;
+}
+
+iframe {
+  @apply my-6;
+  @apply mx-auto;
 }
