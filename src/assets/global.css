@@ -1,4 +1,5 @@
 html {
+  @apply box-border;
   @apply bg-white;
   @apply text-neutral-700;
   @apply font-sans;
@@ -6,8 +7,28 @@ html {
   @apply mx-4;
 }
 
+h1,
+h2,
+h3,
+p,
+blockquote {
+  @apply inline-block;
+}
+
+h2 {
+  @apply text-lg;
+  @apply font-semibold;
+  @apply mt-9;
+}
+
+h3 {
+  @apply text-base;
+  @apply font-semibold;
+  @apply mt-3;
+}
+
 p {
-  @apply my-5;
+  @apply my-3;
 }
 
 a,
@@ -31,5 +52,5 @@ blockquote {
   @apply border-l-4;
   @apply border-neutral-300;
   @apply pl-4;
-  @apply my-5;
+  @apply my-3;
 }
