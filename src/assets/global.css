@@ -1,6 +1,9 @@
 html {
   @apply bg-white;
   @apply text-neutral-700;
+  @apply font-sans;
+  @apply antialiased;
+  @apply mx-4;
 }
 
 p {
