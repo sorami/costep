@@ -38,6 +38,10 @@ img {
 ul {
   @apply list-disc;
   @apply ml-5;
+  @apply my-6;
+}
+li {
+  @apply my-2;
 }
 
 blockquote {
