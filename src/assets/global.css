@@ -35,10 +35,16 @@ img {
   @apply rounded;
 }
 
-ul {
-  @apply list-disc;
+ul,
+ol {
   @apply ml-5;
   @apply my-6;
+}
+ul {
+  @apply list-disc;
+}
+ol {
+  @apply list-decimal;
 }
 li {
   @apply my-2;
