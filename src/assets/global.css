@@ -2,9 +2,15 @@ html {
   @apply box-border;
   @apply bg-white;
   @apply text-neutral-700;
-  @apply font-sans;
+  @apply font-base;
   @apply antialiased;
   @apply mx-4;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-heading;
 }
 
 h2 {

@@ -9,7 +9,7 @@ const sortedArticles = allArticles.sort((a, b) => {
 
 <BaseLayout title="科学技術コミュ日記">
   <main class="max-w-2xl m-auto">
-    <div class="text-sm text-center mb-12 opacity-70">
+    <div class="text-sm text-center mb-12">
       北海道で、CoSTEP「科学技術コミュニケーター養成プログラム」を受講する日々の記録です。
     </div>
     <div class="flex flex-col gap-y-3">
@@ -21,7 +21,7 @@ const sortedArticles = allArticles.sort((a, b) => {
           >
             <div class="flex flex-col gap-y-1 rounded-lg p-3 hover:bg-neutral-2/70">
               <div class="flex justify-between gap-x-6 items-start">
-                <div>{article.data.title}</div>
+                <div class="font-heading">{article.data.title}</div>
                 <div class="shrink-0 opacity-75 tracking-tighter">
                   <time datetime={article.data.pubDate.toISOString()}>
                     {article.data.pubDate.toISOString().slice(0, 10)}
