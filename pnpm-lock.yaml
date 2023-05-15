@@ -12,6 +12,9 @@ dependencies:
     version: 0.3.4
 
 devDependencies:
+  '@iconify/json':
+    specifier: ^2.2.65
+    version: 2.2.65
   '@unocss/reset':
     specifier: ^0.51.12
     version: 0.51.12
@@ -556,6 +559,13 @@ packages:
     os: [win32]
     requiresBuild: true
     optional: true
+
+  /@iconify/json@2.2.65:
+    resolution: {integrity: sha512-yrYYpIQfCRIHH8uyl/uj9TEhasDeqT3xzScSSZgyYewCduTG3FmwdSoYSC61upkTERcGgrZeSjXhXLQaZD2QyQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+      pathe: 1.1.0
+    dev: true
 
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}

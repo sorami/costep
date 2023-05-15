@@ -22,8 +22,25 @@ const { title } = Astro.props;
 
     <slot />
 
-    <footer class="mt-12 mb-12 text-center font-mono hover:underline">
-      <a href="https://sorami.dev" class="decoration-none">sorami.dev</a>
+    <footer class="mt-12 mb-12 flex justify-center gap-x-16 text-neutral-500">
+      <a
+        href="https://sorami.dev"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:opacity-75"><div class="i-ion-home"></div></a
+      >
+      <a
+        href="https://github.com/sorami/costep"
+        target="_blank"
+        class="hover:opacity-75"
+        rel="noopener noreferrer"><div class="i-ion-terminal"></div></a
+      >
+      <a
+        href="/rss.xml"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:opacity-75"><div class="i-ion-logo-rss"></div></a
+      >
     </footer>
   </body>
 </html>
