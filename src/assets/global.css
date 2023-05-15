@@ -40,6 +40,9 @@ a:hover {
 img {
   @apply rounded-lg;
 }
+img:hover {
+  @apply opacity-75;
+}
 
 ul,
 ol {
