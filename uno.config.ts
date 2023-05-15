@@ -9,7 +9,7 @@ export default defineConfig({
       provider: "google",
       fonts: {
         base: "Zen Maru Gothic",
-        heading: "Kaisei Tokumin",
+        heading: "M PLUS Rounded 1c",
       },
     }),
   ],
