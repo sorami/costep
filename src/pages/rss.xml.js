@@ -16,7 +16,7 @@ export function get(context) {
       title: article.data.title,
       pubDate: article.data.pubDate,
       description: article.data.description,
-      link: `/${article.slug}/`,
+      link: `/costep/${article.slug}/`,
     })),
     customData: `<language>ja-jp</language>`,
   });
