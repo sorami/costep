@@ -17,8 +17,12 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <Header />
+    <header class="mt-12 mb-12 text-center font-mono hover:underline">
+      <a href="/" class="decoration-none">科学技術コミュ日記</a>
+    </header>
+
     <slot />
+
     <footer class="mt-12 mb-12 text-center font-mono hover:underline">
       <a href="https://sorami.dev" class="decoration-none">sorami.dev</a>
     </footer>
