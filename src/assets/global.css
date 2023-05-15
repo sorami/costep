@@ -38,7 +38,7 @@ a:hover {
 }
 
 img {
-  @apply rounded;
+  @apply rounded-lg;
 }
 
 ul,
