@@ -8,8 +8,8 @@ export default defineConfig({
     presetWebFonts({
       provider: "google",
       fonts: {
-        base: "Zen Maru Gothic",
         heading: "M PLUS Rounded 1c",
+        base: "M PLUS Rounded 1c",
       },
     }),
   ],
