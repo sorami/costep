@@ -1,6 +1,8 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 
+import { SITE_TITLE, SITE_DESCRIPTION } from "../site";
+
 const allArticles = await getCollection("articles");
 const sortedArticles = allArticles.sort((a, b) => {
   return b.slug.localeCompare(a.slug);
@@ -8,9 +10,8 @@ const sortedArticles = allArticles.sort((a, b) => {
 
 export function get(context) {
   return rss({
-    title: "科学技術コミュ日記",
-    description:
-      "北海道で、CoSTEP「科学技術コミュニケーター養成プログラム」を受講する日々の記録です。",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     site: context.site,
     items: sortedArticles.map((article) => ({
       title: article.data.title,

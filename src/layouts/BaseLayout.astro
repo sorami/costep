@@ -1,6 +1,8 @@
 ---
 import "@assets/global.css";
 
+import { SITE_TITLE } from "../site";
+
 export interface Props {
   title: string;
   description: string;
@@ -23,7 +25,7 @@ const { title, description } = Astro.props;
     <header
       class="mt-12 mb-12 text-center font-heading font-bold hover:underline"
     >
-      <a href="/" class="decoration-none">科学技術コミュ日記</a>
+      <a href="/" class="decoration-none">{SITE_TITLE}</a>
     </header>
 
     <slot />
