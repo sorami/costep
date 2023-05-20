@@ -18,7 +18,11 @@ const { Content } = await article.render();
 const pageTitle = `${article.data.title} - ${SITE_TITLE}`;
 ---
 
-<BaseLayout title={pageTitle} description={article.data.description}>
+<BaseLayout
+  title={pageTitle}
+  description={article.data.description}
+  imgSrc={article.data.image.src}
+>
   <main class="max-w-2xl m-auto">
     <div class="flex flex-col gap-y-2 mb-12 items-center">
       <div class="tracking-tighter">
