@@ -17,7 +17,7 @@ export function get(context) {
       pubDate: article.data.pubDate,
       description: article.data.description,
       link: `/costep/${article.slug}/`,
-      content: `<p>${article.data.description}</p><img src="${context.site}costep${article.data.image}" alt="${article.data.imageAlt}" />`,
+      content: `<p>${article.data.description}</p><img src="${context.site}costep${article.data.image.src}" alt="${article.data.image.alt}" />`,
     })),
     customData: `<language>ja-jp</language>`,
   });
