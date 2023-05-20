@@ -6,16 +6,15 @@ import { SITE_TITLE } from "../site";
 export interface Props {
   title: string;
   description: string;
-  imgSrc?: string;
 }
-const { title, description, imgSrc = "/social.webp" } = Astro.props;
+const { title, description } = Astro.props;
 
 const baseURL = Astro.site?.toString() ?? "";
 const baseURLWithoutTrailingSlash = baseURL.endsWith("/")
   ? baseURL.slice(0, -1)
   : baseURL;
 const canonicalURL = baseURLWithoutTrailingSlash + Astro.url.pathname;
-const absImgSrc = baseURLWithoutTrailingSlash + imgSrc;
+const thumbnailImgSrc = baseURLWithoutTrailingSlash + "/social.png";
 ---
 
 <!DOCTYPE html>
@@ -35,13 +34,13 @@ const absImgSrc = baseURLWithoutTrailingSlash + imgSrc;
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={absImgSrc} />
+    <meta property="og:image" content={thumbnailImgSrc} />
 
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={absImgSrc} />
+    <meta property="twitter:image" content={thumbnailImgSrc} />
   </head>
 
   <body>
