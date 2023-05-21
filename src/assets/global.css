@@ -49,6 +49,9 @@ ol {
   @apply ml-5;
   @apply my-6;
 }
+ul ul {
+  @apply my-0;
+}
 ul {
   @apply list-disc;
 }
