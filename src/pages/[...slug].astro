@@ -4,6 +4,11 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 
 import { SITE_TITLE } from "../site";
 
+const { article } = Astro.props;
+const { Content } = await article.render();
+
+const pageTitle = `${article.data.title} - ${SITE_TITLE}`;
+
 export async function getStaticPaths() {
   const allArticles = await getCollection("articles");
   return allArticles.map((article) => ({
@@ -11,11 +16,6 @@ export async function getStaticPaths() {
     props: { article },
   }));
 }
-
-const { article } = Astro.props;
-const { Content } = await article.render();
-
-const pageTitle = `${article.data.title} - ${SITE_TITLE}`;
 ---
 
 <BaseLayout title={pageTitle} description={article.data.description}>
