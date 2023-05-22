@@ -1,7 +1,6 @@
 ---
 import "@assets/global.css";
-
-import { SITE_TITLE } from "../site";
+import titleSVG from "@assets/title.svg";
 
 export interface Props {
   title: string;
@@ -44,10 +43,14 @@ const thumbnailImgSrc = baseURLWithoutTrailingSlash + "/social.png";
   </head>
 
   <body>
-    <header
-      class="mt-12 mb-12 text-center font-heading font-bold hover:underline"
-    >
-      <a href="/" class="decoration-none">{SITE_TITLE}</a>
+    <header class="mt-12 mb-12 flex justify-center">
+      <a href="/">
+        <img
+          src={titleSVG}
+          alt="科学技術コミュ日記"
+          class="max-w-46 rounded-0"
+        />
+      </a>
     </header>
 
     <slot />
