@@ -20,9 +20,9 @@ const sortedArticles = allArticles.sort((a, b) => {
         sortedArticles.map((article) => (
           <a
             href={`/${article.slug}/`}
-            class="text-neutral-700 decoration-none"
+            class="text-neutral-800 decoration-none"
           >
-            <div class="flex flex-col gap-y-1 rounded-lg p-3 hover:bg-neutral-2/70">
+            <div class="flex flex-col gap-y-1 rounded-2xl p-4 hover:bg-amber-300 hover:text-neutral-800 hover:font-semibold">
               <div class="flex justify-between gap-x-6 items-start">
                 <div class="font-heading">{article.data.title}</div>
                 <div class="shrink-0 opacity-75 tracking-tighter">
