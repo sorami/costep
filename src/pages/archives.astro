@@ -1,0 +1,40 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../site";
+
+const allArticles = await getCollection("articles");
+const sortedArticles = allArticles.sort((a, b) => {
+  return b.slug.localeCompare(a.slug);
+});
+---
+
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <main class="max-w-2xl m-auto">
+    <div class="flex flex-col gap-y-3">
+      {
+        sortedArticles.map((article) => (
+          <a
+            href={`/${article.slug}/`}
+            class="text-neutral-800 decoration-none"
+          >
+            <div class="flex flex-col gap-y-1 rounded-2xl p-4 hover:bg-amber-300 hover:text-neutral-800">
+              <div class="flex justify-between gap-x-6 items-start">
+                <div class="font-heading">{article.data.title}</div>
+                <div class="shrink-0 opacity-75 tracking-tighter">
+                  <time datetime={article.data.pubDate.toISOString()}>
+                    {article.data.pubDate.toISOString().slice(0, 10)}
+                  </time>
+                </div>
+              </div>
+              <div class="text-xs tracking-tight">
+                {article.data.description}
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </main>
+</BaseLayout>
