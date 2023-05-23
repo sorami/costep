@@ -1,0 +1,85 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+export interface Props {
+  article: CollectionEntry<"articles">;
+  index: number;
+}
+
+const { article, index } = Astro.props;
+---
+
+<div class=`card group card-${index}`>
+  <a
+    href={`/${article.slug}/`}
+    class="text-neutral-800 decoration-none hover:text-neutral-900"
+  >
+    <div class="flex flex-col gap-y-2">
+      <div class="relative">
+        <img
+          src={article.data.image.src}
+          alt={article.data.image.alt}
+          class="rounded"
+        />
+        <div
+          class="absolute top-3 left-3 bg-neutral-800/65 text-white text-md rounded px-1.5 py-0.5 tracking-tighter"
+        >
+          <time datetime={article.data.pubDate.toISOString()}>
+            {article.data.pubDate.toISOString().slice(0, 10)}
+          </time>
+        </div>
+      </div>
+
+      <div class="text-lg font-heading group-hover:underline">
+        {article.data.title}
+      </div>
+
+      <div class="text-xs tracking-tighter">
+        {article.data.description}
+      </div>
+
+      {
+        index === 0 ? (
+          <div class="card-0-excerpt text-sm overflow-hidden italic opacity-50">
+            {article.body.slice(0, 200)} …
+          </div>
+        ) : null
+      }
+    </div>
+  </a>
+
+  <style>
+    .card:hover {
+      animation: up 300ms;
+      animation-fill-mode: forwards;
+    }
+    @keyframes up {
+      100% {
+        transform: translateY(-9px);
+      }
+    }
+
+    .card-0-excerpt {
+      display: none;
+    }
+    @media (min-width: 640px) {
+      .card-0-excerpt {
+        display: block;
+      }
+      .card-0 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+      .card-1 {
+        grid-column-start: 3;
+        grid-column-end: 4;
+      }
+      .card-2 {
+        grid-column-start: 3;
+        grid-column-end: 4;
+      }
+    }
+  </style>
+</div>

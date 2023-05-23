@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import Card from "@components/Card.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../site";
 
@@ -8,36 +9,52 @@ const allArticles = await getCollection("articles");
 const sortedArticles = allArticles.sort((a, b) => {
   return b.slug.localeCompare(a.slug);
 });
+const N_THUMBNAILS = 5;
+const thumbnailArticles = sortedArticles.slice(0, N_THUMBNAILS);
+const listArticles = sortedArticles.slice(N_THUMBNAILS);
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <main class="max-w-2xl m-auto">
+  <main class="max-w-5xl m-auto">
     <div class="text-sm text-center mb-12">
       {SITE_DESCRIPTION}
     </div>
-    <div class="flex flex-col gap-y-3">
+
+    <div class="grid grid-cols-1 gap-9 sm:grid-cols-3">
       {
-        sortedArticles.map((article) => (
-          <a
-            href={`/${article.slug}/`}
-            class="text-neutral-800 decoration-none"
-          >
-            <div class="flex flex-col gap-y-1 rounded-2xl p-4 hover:bg-amber-300 hover:text-neutral-800 hover:font-semibold">
-              <div class="flex justify-between gap-x-6 items-start">
-                <div class="font-heading">{article.data.title}</div>
-                <div class="shrink-0 opacity-75 tracking-tighter">
-                  <time datetime={article.data.pubDate.toISOString()}>
-                    {article.data.pubDate.toISOString().slice(0, 10)}
-                  </time>
-                </div>
-              </div>
-              <div class="text-xs tracking-tight">
-                {article.data.description}
-              </div>
-            </div>
-          </a>
+        thumbnailArticles.map((article, index) => (
+          <Card article={article} index={index} />
         ))
       }
     </div>
+
+    {
+      listArticles.length === 0 ? null : (
+        <div class="max-w-2xl mx-auto mt-16">
+          <div class="flex flex-col gap-y-3">
+            {listArticles.map((article) => (
+              <a
+                href={`/${article.slug}/`}
+                class="text-neutral-800 decoration-none"
+              >
+                <div class="flex flex-col gap-y-1 rounded-2xl p-4 hover:bg-amber-300 hover:text-neutral-800">
+                  <div class="flex justify-between gap-x-6 items-start">
+                    <div class="font-heading">{article.data.title}</div>
+                    <div class="shrink-0 opacity-75 tracking-tighter">
+                      <time datetime={article.data.pubDate.toISOString()}>
+                        {article.data.pubDate.toISOString().slice(0, 10)}
+                      </time>
+                    </div>
+                  </div>
+                  <div class="text-xs tracking-tight">
+                    {article.data.description}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )
+    }
   </main>
 </BaseLayout>

@@ -55,10 +55,10 @@ const thumbnailImgSrc = baseURLWithoutTrailingSlash + "/social.png";
 
     <slot />
 
-    <footer class="my-16 text-lg text-neutral-500">
+    <footer class="my-16 text-neutral-500">
       {
         Astro.url.pathname === "/" ? (
-          <div class="flex justify-center gap-x-16">
+          <div class="flex justify-center gap-x-16 text-lg">
             <a
               href="https://sorami.dev"
               target="_blank"
@@ -85,7 +85,7 @@ const thumbnailImgSrc = baseURLWithoutTrailingSlash + "/social.png";
             </a>
           </div>
         ) : (
-          <div class="flex justify-center">
+          <div class="flex justify-center text-2xl">
             <a href="/" class="hover:text-amber-500">
               <div class="i-ion-home" />
             </a>
