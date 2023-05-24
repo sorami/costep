@@ -1,6 +1,6 @@
 html {
   @apply box-border;
-  @apply bg-amber-100;
+  @apply bg-amber-100/60;
   @apply text-neutral-800;
   @apply font-base;
   @apply antialiased;
