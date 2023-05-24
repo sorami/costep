@@ -44,13 +44,15 @@ const thumbnailImgSrc = baseURLWithoutTrailingSlash + "/social.png";
 
   <body>
     <header class="mt-12 mb-12 flex justify-center">
-      <a href="/">
-        <img
-          src={titleSVG}
-          alt="科学技術コミュ日記"
-          class="max-w-62 rounded-0"
-        />
-      </a>
+      <div id="header-inner">
+        <a href="/">
+          <img
+            src={titleSVG}
+            alt="科学技術コミュ日記"
+            class="max-w-62 rounded-0"
+          />
+        </a>
+      </div>
     </header>
 
     <slot />
@@ -97,7 +99,7 @@ const thumbnailImgSrc = baseURLWithoutTrailingSlash + "/social.png";
 </html>
 
 <style>
-  header:hover {
+  header:hover #header-inner {
     animation: shake 700ms ease-out;
   }
 
