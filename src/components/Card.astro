@@ -30,7 +30,9 @@ const { article, index } = Astro.props;
         </div>
       </div>
 
-      <div class="text-lg font-heading group-hover:underline">
+      <div
+        class="title text-lg font-heading group-hover:underline underline-amber-500 decoration-5 decoration-offset--2"
+      >
         {article.data.title}
       </div>
 
@@ -49,6 +51,10 @@ const { article, index } = Astro.props;
   </a>
 
   <style>
+    .title {
+      text-decoration-skip-ink: none;
+    }
+
     .card:hover {
       animation: up 300ms;
       animation-fill-mode: forwards;
