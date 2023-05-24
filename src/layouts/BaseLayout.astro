@@ -95,3 +95,30 @@ const thumbnailImgSrc = baseURLWithoutTrailingSlash + "/social.png";
     </footer>
   </body>
 </html>
+
+<style>
+  header:hover {
+    animation: shake 700ms ease-out;
+  }
+
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    20% {
+      transform: rotate(6deg);
+    }
+    40% {
+      transform: rotate(-6deg);
+    }
+    60% {
+      transform: rotate(6deg);
+    }
+    80% {
+      transform: rotate(-6deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+</style>
