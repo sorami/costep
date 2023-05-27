@@ -9,7 +9,6 @@ export default defineConfig({
       provider: "google",
       fonts: {
         heading: "M PLUS Rounded 1c",
-        base: "M PLUS Rounded 1c",
       },
     }),
   ],

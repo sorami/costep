@@ -25,13 +25,13 @@ export async function getStaticPaths() {
 >
   <main class="max-w-2xl m-auto">
     <div class="flex flex-col gap-y-2 mb-12 items-center">
-      <div class="tracking-tighter">
+      <div class="tracking-tighter font-heading">
         <time datetime={article.data.pubDate.toISOString()}>
           {article.data.pubDate.toISOString().slice(0, 10)}
         </time>
       </div>
       <div>
-        <h1 class="text-3xl font-bold">{article.data.title}</h1>
+        <h1 class="text-2xl">{article.data.title}</h1>
       </div>
       <div class="text-sm tracking-tighter">
         <p class="my-0">{article.data.description}</p>
