@@ -9,12 +9,6 @@ html {
   @apply mx-4;
 }
 
-h1,
-h2,
-h3 {
-  @apply font-heading;
-}
-
 h2 {
   @apply text-2xl;
   @apply font-semibold;

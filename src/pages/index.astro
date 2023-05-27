@@ -39,7 +39,7 @@ const listArticles = sortedArticles.slice(N_THUMBNAILS);
               >
                 <div class="flex flex-col gap-y-1 rounded-2xl p-4 hover:bg-amber-300 hover:text-neutral-800">
                   <div class="flex justify-between gap-x-6 items-start">
-                    <div class="font-heading">{article.data.title}</div>
+                    <div>{article.data.title}</div>
                     <div class="shrink-0 opacity-75 tracking-tighter">
                       <time datetime={article.data.pubDate.toISOString()}>
                         {article.data.pubDate.toISOString().slice(0, 10)}
