@@ -9,7 +9,7 @@ const allArticles = await getCollection("articles");
 const sortedArticles = allArticles.sort((a, b) => {
   return b.slug.localeCompare(a.slug);
 });
-const N_THUMBNAILS = 6;
+const N_THUMBNAILS = 9;
 const thumbnailArticles = sortedArticles.slice(0, N_THUMBNAILS);
 const listArticles = sortedArticles.slice(N_THUMBNAILS);
 ---
