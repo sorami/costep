@@ -9,6 +9,7 @@ const articleCollection = defineCollection({
       src: z.string(),
       alt: z.string(),
     }),
+    isDraft: z.boolean().optional(),
   }),
 });
 
