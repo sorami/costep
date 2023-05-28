@@ -11,6 +11,7 @@
     "format": "prettier --write . --plugin-search-dir=."
   },
   "dependencies": {
+    "@astrojs/mdx": "^0.19.4",
     "@astrojs/rss": "^2.4.1",
     "astro": "^2.4.1",
     "astro-relative-links": "^0.3.4"

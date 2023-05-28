@@ -10,6 +10,6 @@ module.exports = {
         parser: "astro",
       },
     },
-    { files: "*.md", options: { parser: "markdown-nocjsp" } },
+    { files: ["*.md", "*.mdx"], options: { parser: "markdown-nocjsp" } },
   ],
 };
