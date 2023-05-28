@@ -28,6 +28,7 @@ p + p {
 a,
 a:visited {
   @apply underline;
+  text-decoration-skip-ink: none;
 }
 a:hover {
   @apply decoration-none;
