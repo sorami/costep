@@ -21,7 +21,7 @@ h3 {
   @apply mt-9 mb-3;
 }
 
-p + p {
+* + p {
   @apply mt-6;
 }
 
