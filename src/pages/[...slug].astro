@@ -36,8 +36,15 @@ export async function getStaticPaths() {
       <div class="text-sm tracking-tighter">
         <p class="my-0">{article.data.description}</p>
       </div>
-      <div>
-        <img src={article.data.image.src} alt={article.data.image.alt} />
+      <div class="mt-6 flex flex-col gap-y-2">
+        <img
+          class="mx-0"
+          src={article.data.image.src}
+          alt={article.data.image.alt}
+        />
+        <div class="text-xs text-center opacity-75">
+          {article.data.image.alt}
+        </div>
       </div>
     </div>
     <div>
