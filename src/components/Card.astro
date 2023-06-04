@@ -1,5 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { remark } from "remark";
+import strip from "strip-markdown";
 
 export interface Props {
   article: CollectionEntry<"articles">;
@@ -7,6 +9,12 @@ export interface Props {
 }
 
 const { article, index } = Astro.props;
+
+const stripMarkdown = (text: string) => {
+  return remark().use(strip).processSync(text).toString();
+};
+
+const N_CHARS_EXCERPT = 200;
 ---
 
 <div class=`card group card-${index}`>
@@ -43,7 +51,7 @@ const { article, index } = Astro.props;
       {
         index === 0 ? (
           <div class="card-0-excerpt text-sm overflow-hidden italic opacity-50">
-            {article.body.slice(0, 200)} …
+            {stripMarkdown(article.body).slice(0, N_CHARS_EXCERPT)} …
           </div>
         ) : null
       }
