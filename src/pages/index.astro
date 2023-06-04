@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
+import { CollectionEntry, getCollection } from "astro:content";
 import Card from "@components/Card.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../site";
@@ -12,7 +12,19 @@ const sortedPubArticles = pubArticles.sort((a, b) => {
 });
 const N_THUMBNAILS = 9;
 const thumbnailArticles = sortedPubArticles.slice(0, N_THUMBNAILS);
-const listArticles = sortedPubArticles.slice(N_THUMBNAILS);
+
+// split the pubArticles by the month
+const articlesByMonth: { [_: string]: CollectionEntry<"articles">[] } = {};
+sortedPubArticles.forEach((article) => {
+  const pubDate = article.data.pubDate;
+  const year = pubDate.getFullYear();
+  const month = pubDate.getMonth() + 1;
+  const key = `${year}年${month}月`;
+  if (!articlesByMonth[key]) {
+    articlesByMonth[key] = [];
+  }
+  articlesByMonth[key].push(article);
+});
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -30,10 +42,11 @@ const listArticles = sortedPubArticles.slice(N_THUMBNAILS);
     </div>
 
     {
-      listArticles.length === 0 ? null : (
+      Object.entries(articlesByMonth).map(([yearMonth, articles]) => (
         <div class="max-w-2xl mx-auto mt-16">
           <div class="flex flex-col gap-y-3">
-            {listArticles.map((article) => (
+            <div class="text-center font-semibold text-lg">{yearMonth}</div>
+            {articles.map((article) => (
               <a
                 href={`/${article.slug}/`}
                 class="text-neutral-800 decoration-none"
@@ -41,7 +54,7 @@ const listArticles = sortedPubArticles.slice(N_THUMBNAILS);
                 <div class="flex flex-col gap-y-1 rounded-2xl p-4 hover:bg-amber-300 hover:text-neutral-800">
                   <div class="flex justify-between gap-x-6 items-start">
                     <div>{article.data.title}</div>
-                    <div class="shrink-0 opacity-75 tracking-tighter">
+                    <div class="shrink-0 opacity-75 tracking-tighter text-sm">
                       <time datetime={article.data.pubDate.toISOString()}>
                         {article.data.pubDate.toISOString().slice(0, 10)}
                       </time>
@@ -55,7 +68,7 @@ const listArticles = sortedPubArticles.slice(N_THUMBNAILS);
             ))}
           </div>
         </div>
-      )
+      ))
     }
   </main>
 </BaseLayout>
