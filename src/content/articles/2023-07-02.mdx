@@ -1,0 +1,92 @@
+---
+title: この日記はどう作られているか
+pubDate: 2023-07-02
+description: Astro, UnoCSS, Vercel などを使い、盆栽のようにブログをつくっている
+image:
+  src: /images/IMG_8657.webp
+  alt: 北海道大学総合博物館
+---
+
+7月になりました。5月12日に始めたこの日記（ブログ）では、5月に9本、6月に6本の記事を書きました。
+
+講義は、開講式特別プログラムと、「モジュール1. 科学技術コミュニケーション概論」（計5回）が終わりました。7月からは、CoSTEPスタッフによる「モジュール2. 表現とコミュニケーションの手法」（計4回）が始まっています。
+
+ここまで毎回、講義や実習のたびに記事を書いていましたが、ここからは、それに限らず、ざっくりやっていこうかと思います。
+
+今回は、この日記をどう作っているかを書いてみます。既存のブログサービスを使わず、自分で一から実装しています。
+
+## 盆栽のように
+
+私は本業でもウェブサイトをつくるお仕事をしています。
+
+仕事では、様々な技術を用途に応じて採用しますが、趣味プロダクトでは、後で述べるような好きなものをいくらでも導入することができます。
+
+誰に頼まれてやっているわけでもない、締め切りもないものです。好きな時に、インクリメンタルに、デザインや機能を変えていったりできます。
+
+このブログも、最初はシンプルな文字だけのデザインでしたが、数週間経って、サムネイル画像を表示する形に変えました。この記事をあなたが読んでいる頃には、また変わっているかもしれません:
+
+![2023年5月15日 - https://github.com/sorami/costep/commit/491295e438ff3e5f42ded1ffab174b99d12d6a30](/images/2023-07-02_screenshot_1.webp)
+
+![2023年7月2日のスクリーンショット](/images/2023-07-02_screenshot_2.webp)
+
+広大なインターネットの世界にある好きな例を、いくつか紹介します:
+
+- [macwright.com](https://macwright.com/)
+- [brr](https://brr.fyi/)（南極大陸で働いている方のブログ）
+- [Hail2u](https://hail2u.net/)
+- [Yuhei Yasuda](https://yuheiy.com/)
+- [blog.8-p.info](https://blog.8-p.info/ja/)
+- [r7kamura.com](https://r7kamura.com/)
+- [Taichi Nakashima | Taichi Nakashima](https://deeeet.com/)
+- [bkブログ Archives](http://0xcc.net/blog/)
+- [辺境社会研究室 - youkoseki.com](https://youkoseki.com/f/)
+
+ブログに関する記事もいくつか:
+
+- [How to blog - macwright.com](https://macwright.com/2019/02/06/how-to-blog.html)
+- [Some blogging myths](https://jvns.ca/blog/2023/06/05/some-blogging-myths/) - Julia Evans
+- [The Surprisingly High Table Stakes of Modern Blogs](https://www.swyx.io/the-surprisingly-high-table-stakes-of-modern-blogs) - swyx
+- [ブログ投稿のハードルと雑さについて](https://yuheiy.com/20200817-zatsu) - yuheiy.com
+- [読者を意識した、キャリアのためのブログ - blog.8-p.info](https://blog.8-p.info/ja/2021/09/07/pro/)
+- [心のざわめきを無くして日記を書くということ / secon.dev への移転 - A Day in the Life](https://secon.dev/entry/2020/09/03/172016/)
+- [2021年だから人類はHTMLを手打ちしろ](https://youkoseki.com/f/2021_html) - youkoseki.com
+
+[以前の日記](/2023-06-15/)で、時系列の「ブログ」ではない、Wikiのような「デジタル・ガーデン」という形を紹介しましたが、とりあえずは、このような日記もいいのではないかなと。
+
+友人が「盆栽のような個人ブログを」と言っていました。のんびりと、あれやこれやと試していければいいなと思っています。
+
+## 好きな技術を好きなだけ: Astro, UnoCSS, Vercel
+
+この日記のコードおよびコンテンツ、編集履歴は、全て以下のページ（GitHubレポジトリ）で確認できます:
+
+[sorami/costep: 科学技術コミュ日記](https://github.com/sorami/costep)
+
+実装には「Astro」というWebフレームワークを使っています。2022年にv1.0がリリースされました。Next.jsが複雑なWebアプリの構築へ適しているのに対し、Astroはコンテンツをベースとしたウェブサイト（ブログやランディングページなど）へフォーカスしています。私としては「まさにこういうのが欲しかったんだよ！」という気持ちで、使いやすく、昨年末くらいから積極的に利用しています:
+
+[Astro](https://astro.build/)
+
+ちなみに個人的には、以前は静的サイトジェネレーターの[Eleventy（11ty）](https://www.11ty.dev/)を使っていましたが、そちらはNunjucksやHAML、といったテンプレート言語を使うものでした。一方でAstroは、よりモダンなWeb開発のフレーバーです。また、ReactやVue.js、Svelteといったフレームワークのコンポーネントをそのまま利用することもできます:
+
+<YouTube videoId="gxBkghlglTg" />
+
+また、↑のような埋め込みを容易にするため、Astroでコンポーネントを作成し、それをMDXで利用しています:
+
+[Markdown for the component era | MDX](https://mdxjs.com/)
+
+[Markdoc](https://markdoc.dev/)にも興味があるのですが、そのタイミング（2023年5月ごろ）はまだAstroの[Content Collectionsという機能](https://docs.astro.build/en/guides/content-collections/)にMarkdocが正式対応していなかったようなので、MDXを使っています:
+
+- [Markdoc support by bholmesdev · Pull Request #508 · withastro/roadmap](https://github.com/withastro/roadmap/pull/508)
+- [@astrojs/markdoc 🚀 Astro Documentation](https://docs.astro.build/en/guides/integrations-guide/markdoc/)
+
+スタイルには、UnoCSSというアトミックCSS（ユーティリティファーストCSS）フレームワークを使っています（[Tailwind CSS](https://tailwindcss.com/)のようなものです）。個人的にかなり好きで、手に馴染みます:
+
+- [UnoCSS: The instant on-demand Atomic CSS engine](https://unocss.dev/)
+- [Reimagine Atomic CSS](https://antfu.me/posts/reimagine-atomic-css)（antfu, 2021）
+
+デプロイにはVercelを使っています。無料プランで十分使えています。シンプルで、開発者体験が良くて好きです:
+
+[Vercel: Develop. Preview. Ship. For the best frontend teams](https://vercel.com/)
+
+ぼちぼちやっていきます 🧑‍🌾
+
+import YouTube from "@components/YouTube.astro";
