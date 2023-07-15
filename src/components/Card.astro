@@ -63,14 +63,12 @@ const N_CHARS_EXCERPT = 200;
       text-decoration-skip-ink: none;
     }
 
-    .card:hover {
-      animation: up 300ms;
-      animation-fill-mode: forwards;
+    .card {
+      transition: transform 300ms;
     }
-    @keyframes up {
-      100% {
-        transform: translateY(-9px);
-      }
+    .card:hover {
+      transform: translateY(-9px);
+      transition: transform 300ms;
     }
 
     .card-0-excerpt {
