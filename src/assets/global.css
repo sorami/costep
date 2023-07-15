@@ -37,17 +37,11 @@ a:hover {
 
 img {
   @apply rounded-lg;
+  transition: opacity 300ms;
 }
 img:hover {
-  animation: img-hover 300ms forwards;
-}
-@keyframes img-hover {
-  0% {
-    @apply opacity-100;
-  }
-  100% {
-    @apply opacity-75;
-  }
+  transition: opacity 300ms;
+  @apply opacity-75;
 }
 
 ul,
