@@ -39,7 +39,15 @@ img {
   @apply rounded-lg;
 }
 img:hover {
-  @apply opacity-75;
+  animation: img-hover 300ms forwards;
+}
+@keyframes img-hover {
+  0% {
+    @apply opacity-100;
+  }
+  100% {
+    @apply opacity-75;
+  }
 }
 
 ul,
