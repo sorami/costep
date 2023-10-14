@@ -8,7 +8,7 @@ fi
 
 # Input and output filenames
 input_file="$1"
-output_file="$(basename "$input_file" | cut -d. -f1).webp"
+output_file="./public/images/$(basename "$input_file" | cut -d. -f1).webp"
 
 # Convert to WebP using cwebp
 cwebp "$input_file" -o "$output_file"
