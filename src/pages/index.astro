@@ -10,7 +10,7 @@ const pubArticles = allArticles.filter((article) => !article.data.isDraft);
 const sortedPubArticles = pubArticles.sort((a, b) => {
   return b.slug.localeCompare(a.slug);
 });
-const N_THUMBNAILS = 9;
+const N_THUMBNAILS = 100;
 const thumbnailArticles = sortedPubArticles.slice(0, N_THUMBNAILS);
 
 // split the pubArticles by the month
@@ -42,7 +42,7 @@ sortedPubArticles.forEach((article) => {
       }
     </div>
 
-    {
+    <!-- {
       Object.entries(articlesByMonth).map(([yearMonth, articles]) => (
         <div class="max-w-2xl mx-auto mt-16">
           <div class="flex flex-col gap-y-3">
@@ -70,6 +70,6 @@ sortedPubArticles.forEach((article) => {
           </div>
         </div>
       ))
-    }
+    } -->
   </main>
 </BaseLayout>
