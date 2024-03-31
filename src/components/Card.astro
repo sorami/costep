@@ -48,13 +48,13 @@ const N_CHARS_EXCERPT = 310;
         {article.data.description}
       </div>
 
-      {
+      <!-- {
         index === 0 ? (
           <div class="card-0-excerpt text-sm overflow-hidden italic opacity-50">
             {stripMarkdown(article.body).slice(0, N_CHARS_EXCERPT)} …
           </div>
         ) : null
-      }
+      } -->
     </div>
   </a>
 
@@ -71,7 +71,7 @@ const N_CHARS_EXCERPT = 310;
       transition: transform 300ms;
     }
 
-    .card-0-excerpt {
+    /* .card-0-excerpt {
       display: none;
     }
     @media (min-width: 640px) {
@@ -92,6 +92,6 @@ const N_CHARS_EXCERPT = 310;
         grid-column-start: 3;
         grid-column-end: 4;
       }
-    }
+    } */
   </style>
 </div>

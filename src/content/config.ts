@@ -10,6 +10,7 @@ const articleCollection = defineCollection({
       alt: z.string(),
     }),
     isDraft: z.boolean().optional(),
+    hideHero: z.boolean().optional(),
   }),
 });
 
